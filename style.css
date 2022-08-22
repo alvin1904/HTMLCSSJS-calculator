@@ -1,0 +1,14 @@
+:root{
+    --ff-primary: "Poppins", sans-serif;
+}
+
+body{
+    background-image: url('bg.png');
+}
+
+.container {
+    max-width: 375px;
+    max-height: 1254px;
+    background-color: #17181A;
+    color: white;
+}
