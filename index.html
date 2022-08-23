@@ -1,3 +1,5 @@
+<!-- https://www.figma.com/file/ySdHshO281pWeIFShZAnOF/Calculator-App-Ui-Design-Download-Free-(Community)?node-id=74%3A244 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,34 +16,45 @@
 </head>
 <body>
     <div class="container">
-        <section class="displayUnit">
-            
+        <section class="displayUnit ">
+            <div class="history text-neutral-500 fs-24">
+                1+2+3
+            </div>
+            <div class="answer text-neutral-900 fs-48 fw-medium">
+                =123
+            </div>
         </section>
         <section class="buttons">    
             <div class="topoperations">
-                <button class="button">Ac</button>    
-                <button class="button">C</button>    
-                <button class="button">/</button>    
-                <button class="button">*</button>    
+                <button class="button bg-neutral-800 text-neutral-500 fs-24 fw-medium" id="bAc">Ac</button>    
+                <button class="button bg-neutral-800 text-neutral-500 fs-24 fw-medium" id="bBs">⌫</button>    
+                <button class="button bg-primary-300 text-primary-400 fs-24 fw-medium" id="bD">/</button>    
+                <button class="button bg-primary-300 text-primary-400 fs-24 fw-medium" id="bM">*</button>    
             </div>
-            <div class="operands">
-                <button class="button">9</button>    
-                <button class="button">8</button>    
-                <button class="button">7</button>    
-                <button class="button">6</button>
-                <button class="button">5</button>    
-                <button class="button">4</button>    
-                <button class="button">3</button>    
-                <button class="button">2</button>
-                <button class="button">1</button>    
-                <button class="button">0</button>    
-                <button class="button">.</button>    
-            </div>
-            <div class="sideoperations">
-                <button class="button">-</button>    
-                <button class="button">+</button>    
-                <button class="button">=</button> 
-            </div>
+            <div class = "bottomoperations">
+                <div class="operands">
+                    <div class="innerops1">
+                        <button class="button bg-neutral-200 text-primary-500 fs-24 fw-medium" id="b7">7</button>    
+                        <button class="button bg-neutral-200 text-primary-500 fs-24 fw-medium" id="b8">8</button>    
+                        <button class="button bg-neutral-200 text-primary-500 fs-24 fw-medium" id="b9">9</button></div>
+                    <div class="innerops2">
+                        <button class="button bg-neutral-200 text-primary-500 fs-24 fw-medium" id="b4">4</button>    
+                        <button class="button bg-neutral-200 text-primary-500 fs-24 fw-medium" id="b5">5</button>    
+                        <button class="button bg-neutral-200 text-primary-500 fs-24 fw-medium" id="b6">6</button></div>
+                    <div class="innerops3">
+                        <button class="button bg-neutral-200 text-primary-500 fs-24 fw-medium" id="b1">1</button>    
+                        <button class="button bg-neutral-200 text-primary-500 fs-24 fw-medium" id="b2">2</button>    
+                        <button class="button bg-neutral-200 text-primary-500 fs-24 fw-medium" id="b3">3</button></div>                                            
+                    <div class="innerops4">
+                        <button class="button bg-neutral-200 text-primary-500 fs-24 fw-medium" id="b0">0</button>    
+                        <button class="button bg-neutral-200 text-primary-500 fs-24 fw-medium" id="bdot">.</button></div>  
+                </div>
+                <div class="sideoperations">
+                    <button class="button bg-primary-300 text-primary-400 fs-24 fw-medium" id="bS">-</button>    
+                    <button class="button bg-primary-300 text-primary-400 fs-24 fw-medium" id="bA">+</button>    
+                    <button class="button bg-primary-500 text-neutral-900 fs-24 fw-medium" id="bE">=</button> 
+                </div>
+            </div>    
         </section>
     </div>
 </body>
