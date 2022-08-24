@@ -102,8 +102,13 @@ body{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-.history{margin-top: 110px;}
-.answer{margin-bottom: 50px;}
+.history{margin-top: 110px;
+    min-height: 25px;
+}
+.answer{margin-bottom: 50px;
+    margin-top:10px;
+    min-height: 48px;
+}
 
 button{
     border: none;
@@ -113,7 +118,7 @@ button{
     height: 60px;
     border-radius: 16px;
 }
-#b0{width: 137px;}
+#boper[target = "b0"]{width: 137px;}
 #bA,#bE{height: 96px;}
 button:hover{
     opacity: .8;
@@ -136,3 +141,4 @@ button:hover{
     margin-right: 20px;
     text-align: right;
 }
+
