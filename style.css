@@ -88,7 +88,6 @@
 body{
     background-image: url('bg.png');
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -108,7 +107,15 @@ body{
 .answer{margin-bottom: 50px;
     margin-top:10px;
     min-height: 48px;
+
 }
+@media screen and (max-width: 391.55){
+    .answerSpan{
+        color: green;
+        max-width: 291.55px;
+    }
+}
+
 
 button{
     border: none;

@@ -1,5 +1,3 @@
-
-
 const history = document.querySelector(".historySpan");
 const answer = document.querySelector(".answerSpan");
 
@@ -13,7 +11,8 @@ const bequal = document.querySelector("#bE");
 //BUTTONS
 boper.forEach((button) => {
      button.addEventListener("click",()=>{
-        answer.innerText = answer.innerText + button.innerText;
+        if(parseInt(answer.innerText) < 9999999 || answer.innerText == "")
+            answer.innerText = answer.innerText + button.innerText;
     });
 });
 
@@ -21,8 +20,8 @@ boper.forEach((button) => {
 bAc.addEventListener("click", ()=>{
     answer.innerText=""; 
     history.innerText="";
-    data.operand1 = undefined; 
-    data.operand2 = undefined; 
+    data.operand1 = 0; 
+    data.operand2 = 0; 
     data.operation = undefined; 
     data.stage=0;
 });
@@ -36,42 +35,42 @@ bBs.addEventListener("click", ()=>{
 
 //VARIABLES
 let data = {
-    operand1: 32,
+    operand1: 0,
     operation: '',
-    operand2: 31,
+    operand2: 0,
     stage: 0
 };
 let oper = undefined;
 
 function operate(){
-    switch(data.operation){
-        case '+':   data.operand1 += data.operand2;
-                    break;
-        case '-':   data.operand1 -= data.operand2;
-                    break;
-        case '*':   data.operand1 *= data.operand2;
-                    break;
-        case '/':   data.operand1 /= data.operand2;
-                    break;
-    };
-    data.operand2 = undefined;
+        switch(data.operation){
+            case '+':   data.operand1 += data.operand2;
+                        break;
+            case '-':   data.operand1 -= data.operand2;
+                        break;
+            case '*':   data.operand1 *= data.operand2;
+                        break;
+            case '/':   data.operand1 /= data.operand2;
+                        break;
+        };
+        data.operand2 = undefined;
 }
 
 
 //OPERATION
 boperations.forEach((button)=>{
     button.addEventListener("click",()=>{
-        if(answer.innerText != ""){
+        if(answer.innerText != "" && data.operand1 !== undefined){
             oper = button.innerText;
             if(data.stage === 0){
                 data.stage = 1;
-                data.operand1 = parseInt(answer.innerText);
+                data.operand1 = parseFloat(answer.innerText);
                 answer.innerText = "";
                 history.innerText = `${data.operand1} ${oper} `;  
             }
             else if(data.stage === 1 || data.stage === 2){
                 data.stage = 2; 
-                data.operand2 = parseInt(answer.innerText);
+                data.operand2 = parseFloat(answer.innerText);
                 answer.innerText = "";
                 operate();
                 history.innerText = `${data.operand1} ${oper} `;        
@@ -89,19 +88,20 @@ boperations.forEach((button)=>{
 bequal.addEventListener("click",()=>{
         if(data.stage === 1 || data.stage === 2){
             data.operand2 = parseInt(answer.innerText);
-            operate();
-            answer.innerText = `${data.operand1}`;
+            if(answer.innerText != "")
+                operate();
+            answer.innerText = `${parseFloat(data.operand1).toFixed(2)}`;
             history.innerText = "";  
         }
         else if(data.stage === 0){
             if(answer.innerText != "")
                 data.operand1 = parseInt(answer.innerText);
-            answer.innerText = `${data.operand1}`;
+            answer.innerText = `${parseFloat(data.operand1).toFixed(2)}`;
             history.innerText = "";        
         }
 
-    data.operand1 = undefined; 
-    data.operand2 = undefined; 
+    data.operand1 = 0; 
+    data.operand2 = 0; 
     data.operation = undefined; 
     data.stage=0;
 })
